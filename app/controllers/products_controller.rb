@@ -4,8 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def add
-    byebug
-    cart << item
+    cart << params[:product]
     redirect_to root_path
   end
 
