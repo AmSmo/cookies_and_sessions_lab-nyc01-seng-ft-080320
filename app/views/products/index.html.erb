@@ -1,8 +1,13 @@
-<%= form_for :item, url: add_path do |f| %>
-<%= f.label :item %>
-<%= f.text_field :item %>
-<%= f.submit %>
+
+<%= form_tag ({controller: 'products',
+    action: 'add',
+    method: 'post'}) do %>
+
+  <input name=product>
+  <input type=submit value='add to cart'>
 <% end %>
-
-
-
+<ul>  
+  <%= cart.each do |product| %>
+    <li><%= product %></li>
+  <% end %>
+</ul>
